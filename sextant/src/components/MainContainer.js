@@ -3,12 +3,17 @@ import React from "react";
 // images sections
 import avatar from "../assets/imgs/avatar.jpg";
 import IpDisplayer from "./IpDisplayer";
+import Pylon from "./Pylon";
 
 class MainContainer extends React.Component{
 	render(){
 		return (
 			<div className="d-block position-relative p-3 w-100">
-				<IpDisplayer/>
+				<div className="d-flex align-items-center justify-content-between">
+					<Pylon/>
+					<IpDisplayer/>
+				</div>
+				
 				<div className="row">
 					<div className="col-xl-4 col-lg-6 col-md-12 mb-4">
 						<div className="Card">
