@@ -57,7 +57,7 @@ class MainContainer extends React.Component{
 						</div>
 					</div>
 					
-					<div className="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-4">
+					<div className="col-xl-4 col-lg-6 col-md-12 mb-4">
 						<div className="Card">
 							<img src={avatar}
 								 className="Card-img-top w-100" alt="Card"/>

@@ -34,12 +34,17 @@ class Pylon extends React.Component {
 				})
 			};
 			
-			socket.onerror = (error)=>{
-				console.log(error);
-				socket.close();
+			socket.onclose = (event)=>{
+				console.log("Connection to Cisco Servers closed.");
 				this.setState({
 					socketStarted: false
 				});
+			}
+			
+			socket.onerror = (error)=>{
+				console.log(error);
+				console.log("Connection to Cisco Servers not established.");
+				socket.close();
 				setTimeout(()=>{
 					console.log("Reconnecting to socket");
 					this.connectToSocket();
@@ -50,7 +55,7 @@ class Pylon extends React.Component {
 	
 	render() {
 		return (
-			<div className="d-block psoition-relative">
+			<div className="d-block position-relative">
 				The latency is <strong>{ this.state.delay }</strong>
 			</div>
 		);
