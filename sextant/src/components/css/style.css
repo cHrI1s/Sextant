@@ -1,0 +1,12 @@
+.header{
+    background-color: #130f40;
+    padding: 10px 15px;
+}
+
+.sidebar{
+    margin-top: 0;
+    width: 20%;
+    background: #130f40;
+    min-width: 280px;
+    padding: 10px 40px;
+}
