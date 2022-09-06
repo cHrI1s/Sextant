@@ -27,8 +27,11 @@ class IpDisplayer extends React.Component {
 		});
 	}
 	
-	render(){
+	componentDidMount() {
 		this.getIpAddress();
+	}
+	
+	render(){
 		return (
 			<div className="d-block position-relative text-end mb-4">
 				<div className="d-block position-relative">

@@ -9,16 +9,11 @@ class Pylon extends React.Component {
 		}
 	}
 	
-	componentDidMount() {
-		this.connectToSocket();
-	}
-	
 	connectToSocket(){
 		if(!this.state.socketStarted) {
 			let socket = new WebSocket("ws://localhost:55455");
 			socket.onopen = (event)=>{
 				console.log(event);
-				console.log("Connection opened");
 				this.setState({
 					socketStarted: true
 				});
@@ -35,7 +30,6 @@ class Pylon extends React.Component {
 			};
 			
 			socket.onclose = (event)=>{
-				console.log("Connection to Cisco Servers closed.");
 				this.setState({
 					socketStarted: false
 				});
@@ -43,20 +37,24 @@ class Pylon extends React.Component {
 			
 			socket.onerror = (error)=>{
 				console.log(error);
-				console.log("Connection to Cisco Servers not established.");
 				socket.close();
 				setTimeout(()=>{
-					console.log("Reconnecting to socket");
 					this.connectToSocket();
-				}, 5000);
+				}, 10000);
 			}
 		}
 	}
 	
+	componentDidMount() {
+		this.connectToSocket();
+	}
+	
 	render() {
 		return (
-			<div className="d-block position-relative">
-				The latency is <strong>{ this.state.delay }</strong>
+			<div className="d-block position-relative w-100">
+				<div className="d-block position-relative">
+					The latency is <strong>{ this.state.delay }</strong>
+				</div>
 			</div>
 		);
 	}

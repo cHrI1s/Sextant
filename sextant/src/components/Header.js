@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/style.css";
+import AppConstant from "../utils/AppConstant";
 
 
 export class Header extends React.Component {
@@ -11,7 +12,7 @@ export class Header extends React.Component {
 	render(){
 		return (
 			<div className="d-flex justify-content-between align-items-center header text-white">
-				<div className="fw-bolder"> { this.props.appName }</div>
+				<div className="fw-bolder"> { AppConstant.APP_NAME }</div>
 				<div>
 					Log out
 				</div>

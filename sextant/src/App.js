@@ -9,7 +9,7 @@ class App extends React.Component {
 	render(){
 		return (
 			<div>
-				<Header appName="Sextant"/>
+				<Header/>
 				<div className="d-flex">
 					<SideBar title="Sidebar"/>
 					<MainContainer/>
